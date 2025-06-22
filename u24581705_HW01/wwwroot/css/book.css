@@ -1,0 +1,6 @@
+﻿input[readonly].date {
+    background-color: #fff !important; 
+    color: #212529 !important; 
+    opacity: 1 !important;
+    cursor: default; 
+}

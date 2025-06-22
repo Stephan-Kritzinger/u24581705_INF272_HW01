@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "s/DsrCGboCQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Steph\\Documents\\School\\University\\2025\\INF272\\u24581705_HW01\\u24581705_HW01\\u24581705_HW01.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Steph\\.nuget\\packages\\popper.js\\1.16.1\\popper.js.1.16.1.nupkg.sha512",
+    "C:\\Users\\Steph\\.nuget\\packages\\tempusdominus\\6.10.1\\tempusdominus.6.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}

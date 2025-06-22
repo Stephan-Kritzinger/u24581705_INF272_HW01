@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Book a service";
+}
+<head>
+    <link rel="stylesheet" href="~/css/booking.css" asp-append-version="true" />
+</head>
+
+<div class="container-fluid bg-light">
+    <div class="row">
+        <div class="col-12 flex-column d-flex justify-content-center align-items-center">
+            <h2 class="fw-bold text-info mt-3">Select a service</h2>
+            <p class="fs-4 text-secondary">Choose the service that suits your situation the most</p>
+        </div>
+    </div>
+    <div class="row row-cols-3 gy-3">
+        <div class="col">
+            <div class="card p-3 h-100">
+                <img src="/Images/ALS.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;"/>
+                <div class="card-body">
+                    <h5 class="card-title">ALS (Advanced Life Support)</h5>
+                    <p class="card-text">ALS ambulance is staffed by a Paramedic and is used to transport patients who require high level of care</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Advanced Life Support" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 h-100 gy-3">
+                <img src="/Images/BLS.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;" />
+                <div class="card-body">
+                    <h5 class="card-title">BLS (Basic Life Support)</h5>
+                    <p class="card-text">BLS ambulance is provides transport to patients who are in a non life threatening condition</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Basic Life Support" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 h-100 gy-3">
+                <img src="/Images/Patient.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;" />
+                <div class="card-body">
+                    <h5 class="card-title">Patient Transport</h5>
+                    <p class="card-text">The most basic type of transport for patients requiring ambulatory support to and from the hospital</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Patient Transport" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 h-100 gy-3">
+                <img src="/Images/Utility.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;" />
+                <div class="card-body">
+                    <h5 class="card-title">Medical Utility Vehicle</h5>
+                    <p class="card-text">A state-of-the-art small or large van that is designed to facilitate the movement and transport of patients</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Medical Utility Vehicle" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 h-100 gy-3">
+                <img src="/Images/Event.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;" />
+                <div class="card-body">
+                    <h5 class="card-title">Event Medical Ambulance</h5>
+                    <p class="card-text">Ambulances that are stationed at events, such as concerts, sports games, and festivals, to provide medical assistance</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Event Medical Ambulance" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 h-100 gy-3">
+                <img src="/Images/Air.jpg" class="mx-auto d-block" style="width: auto; max-width: 100%; height: auto;" />
+                <div class="card-body">
+                    <h5 class="card-title">Air ambulance</h5>
+                    <p class="card-text">Air ambulance help in the transfer of patients across long distances in both emergency and non-emergency situations</p>
+                    <a href="@Url.Action("Book", "Home", new { service = "Air ambulance" })" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

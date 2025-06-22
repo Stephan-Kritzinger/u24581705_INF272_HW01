@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Steph\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.13.2</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\Steph\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.css" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.css')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\css\tempus-dominus.css</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.css.map" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.css.map')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\css\tempus-dominus.css.map</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.min.css" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\css\tempus-dominus.min.css')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\css\tempus-dominus.min.css</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\jQuery-provider.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\jQuery-provider.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\jQuery-provider.js</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\jQuery-provider.min.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\jQuery-provider.min.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\jQuery-provider.min.js</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.esm.js</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.js.map" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.js.map')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.esm.js.map</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.min.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.esm.min.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.esm.min.js</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.js</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.js.map" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.js.map')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.js.map</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.min.js" Condition="Exists('$(NuGetPackageRoot)tempusdominus\6.10.1\contentFiles\any\any\wwwroot\js\tempus-dominus.min.js')">
+      <NuGetPackageId>TempusDominus</NuGetPackageId>
+      <NuGetPackageVersion>6.10.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>wwwroot\js\tempus-dominus.min.js</Link>
+    </Content>
+  </ItemGroup>
+</Project>

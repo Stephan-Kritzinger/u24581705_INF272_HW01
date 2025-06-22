@@ -1,0 +1,57 @@
+﻿<head>
+    <script>
+        const data = @Html.Raw(TempData["json"]);
+        if(data){
+            let drivers = JSON.parse(localStorage.getItem("drivers")) || [];
+            drivers.push(data);
+            localStorage.setItem("drivers", JSON.stringify(drivers));
+            window.location.href = '@Url.Action("Manage", "Home")';
+        }
+    </script>
+</head>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col">
+            <i class="fa-solid fa-user-gear fa-2xl"></i>
+            <br />
+            <h2 class="fw-bold text-info mt-3 text-center">Add Driver</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form asp-action="saveDriver" asp-controller="Home" method="post" enctype="multipart/form-data">
+            <div class="row row-cols-2">
+                <div class="col">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName" required />
+                </div>
+                <div class="col">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName" required />
+                </div>
+                <div class="col">
+                    <label for="Phone">Phone</label>
+                    <input type="text" class="form-control" id="Phone" placeholder="+27 000 000 0000" name="phone" required />
+                </div>
+                <div class="col mb-3">
+                    <label for="Service">Service</label>
+                    <select class="form-select" id="Service" name="service" required>
+                        <option selected>ALS (Advanced Life Support)</option>
+                        <option>BLS (Basic Life Support)</option>
+                        <option>Patient Transport</option>
+                        <option>Medical Utility Vehicle</option>
+                        <option>Event Medical Ambulance</option>
+                        <option>Air ambulance</option>
+                    </select>
+                </div>
+                <div class="col gy-3">
+                    <label for="driverImage" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="driverImage" name="image" required/>
+                </div>
+                <div class="col-12 mt-2">
+                    <button type="submit" class="btn btn-success rounded-pill px-4">Add Driver</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

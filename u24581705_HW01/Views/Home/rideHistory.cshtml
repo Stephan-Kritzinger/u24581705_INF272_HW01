@@ -1,0 +1,76 @@
+﻿<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            const container = document.getElementById("cardContainer");
+
+            bookings.forEach(booking => {
+                const isSOS = booking.sos === true;
+
+                const card = document.createElement("div");
+                card.className = `card mb-3 bg-light rounded-5 ${isSOS ? 'border-danger' : ''}`;
+                card.style.cursor = "pointer";
+
+                card.onclick = () => {
+                    window.location.href = `/Home/BookingConfirmed?guid=${encodeURIComponent(booking.guid)}`;
+                };
+
+                const row = document.createElement("div");
+                row.className = "row g-0";
+
+                const colMain = document.createElement("div");
+                colMain.className = "col-11";
+
+                const cardBody = document.createElement("div");
+                cardBody.className = "card-body";
+
+                const textClass = isSOS ? "text-danger" : "text-body";
+
+                const dateHeading = document.createElement("h5");
+                dateHeading.className = `card-title ${isSOS ? "text-danger" : ""}`;
+                dateHeading.textContent = `${booking.date}${isSOS ? " - S.O.S" : ""}`;
+                cardBody.appendChild(dateHeading);
+
+                const entries = [
+                    { label: "Booking ID", value: booking.guid },
+                    { label: "Driver Name", value: booking.driverName },
+                    { label: "Ambulance Type", value: booking.type },
+                    { label: "Pick-Up Address", value: booking.address }
+                ];
+
+                entries.forEach(entry => {
+                    const p = document.createElement("p");
+                    p.className = "card-text";
+                    p.innerHTML = `<span class="${textClass}"><b>${entry.label}:</b> ${entry.value}</span>`;
+                    cardBody.appendChild(p);
+                });
+
+                colMain.appendChild(cardBody);
+
+                const colIcon = document.createElement("div");
+                colIcon.className = "col-1 d-flex align-items-center justify-content-center";
+                const icon = document.createElement("i");
+                icon.className = "fa-solid fa-chevron-right fa-2xl";
+                if (isSOS) icon.classList.add("text-danger");
+                colIcon.appendChild(icon);
+
+                row.appendChild(colMain);
+                row.appendChild(colIcon);
+                card.appendChild(row);
+                container.appendChild(card);
+            });
+        });
+    </script>
+</head>
+
+<div class="container-fluid">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+            <i class="fa-solid fa-clock fa-2xl"></i>
+            <h2 class="fw-bold text-info mt-3">Ride History</h2>
+        </div>
+    </div>
+    <div id="cardContainer">
+
+    </div>
+</div>

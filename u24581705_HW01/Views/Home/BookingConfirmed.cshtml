@@ -1,0 +1,81 @@
+﻿@model Booking
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const guid = params.get("guid");
+
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            const booking = bookings.find(b => b.guid === guid);
+
+            if (!booking) {
+            console.warn("Booking not found for GUID:", guid);
+            return;
+            }
+
+            document.getElementById("bookingId").textContent = booking.guid;
+            document.getElementById("bookingDate").textContent = booking.date;
+            document.getElementById("bookingTime").textContent = booking.time;
+            document.getElementById("bookingAddress").textContent = booking.address;
+
+            document.getElementById("driverName").textContent = booking.driverName;
+            document.getElementById("driverNumber").textContent = booking.phone;
+            document.getElementById("driverImage").setAttribute("src", "/Images/Driver/" + booking.driverImage);
+
+            document.getElementById("ambulanceType").textContent = booking.type;
+            document.getElementById("ambulanceReg").textContent = booking.registration;
+            document.getElementById("vehicleImage").setAttribute("src", "/Images/Vehicle/" + booking.vehicleImage);
+        });
+
+    </script>
+</head>
+<div class="container-fluid">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+            <i class="fa-solid fa-book-open fa-2xl"></i>
+            <h2 class="fw-bold text-info mt-3">Booking Confirmed</h2>
+        </div>
+    </div>
+
+    <div class="container bg-light mb-4 w-75 p-2">
+        <div class="row">
+            <h4 class="fw-bold text-primary text-center mt-4 mb-3">Booking Details</h4>
+        </div>
+        <div class="row"><span class="text-body"><b>Booking ID:</b> <span id="bookingId"></span></span></div>
+        <div class="row"><span class="text-body"><b>Date Booked:</b> <span id="bookingDate"></span></span></div>
+        <div class="row"><span class="text-body"><b>Pick-up time:</b> <span id="bookingTime"></span></span></div>
+        <div class="row"><span class="text-body"><b>Pick-up Address:</b> <span id="bookingAddress"></span></span></div>
+    </div>
+
+    <div class="container bg-light mb-4 w-75 p-2">
+        <div class="row">
+            <h4 class="fw-bold text-primary text-center mt-4 mb-3">Driver Details</h4>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <img src="/Images/Image-not-found.png" class="img-fluid" id="driverImage" style="max-width: 200px; height: auto;" />
+            </div>
+            <div class="col">
+                <div class="row"><span class="text-body"><b>Driver Name:</b> <span id="driverName"></span></span></div>
+                <div class="row"><span class="text-body"><b>Phone Number:</b> <span id="driverNumber"></span></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mb-4 w-75 p-2">
+        <div class="row">
+            <h4 class="fw-bold text-primary text-center mt-4 mb-3">Ambulance Details</h4>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <img src="/Images/Image-not-found.png" class="img-fluid" id="vehicleImage" style="max-width: 200px; height: auto;" />
+            </div>
+            <div class="col">
+                <div class="row"><span class="text-body"><b>Ambulance Type:</b> <span id="ambulanceType"></span></span></div>
+                <div class="row"><span class="text-body"><b>Registration number:</b> <span id="ambulanceReg"></span></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

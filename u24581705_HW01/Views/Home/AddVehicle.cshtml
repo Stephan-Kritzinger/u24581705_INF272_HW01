@@ -1,0 +1,54 @@
+﻿<head>
+    <script>
+        const data = @Html.Raw(TempData["json"]);
+        if(data){
+            let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+            vehicles.push(data);
+            localStorage.setItem("vehicles", JSON.stringify(vehicles));
+            window.location.href = '@Url.Action("Manage", "Home")';
+        }
+    </script>
+</head>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col">
+            <i class="fa-solid fa-wrench fa-2xl"></i>
+            <br />
+            <h2 class="fw-bold text-info mt-3 text-center">Add Vehicle</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form asp-action="saveVehicle" asp-controller="Home" method="post" enctype="multipart/form-data">
+            <div class="row row-cols-2">
+                <div class="col">
+                    <label for="type">Type</label>
+                    <input type="text" class="form-control" id="type" placeholder="Vehicle Type" name="type" required />
+                </div>
+                <div class="col">
+                    <label for="registration">Vehicle Registration</label>
+                    <input type="text" class="form-control" id="registration" placeholder="Vehicle Registration Number" name="registration" required />
+                </div>
+                <div class="col mb-3">
+                    <label for="Service">Service</label>
+                    <select class="form-select" id="Service" name="service" required>
+                        <option selected>ALS (Advanced Life Support)</option>
+                        <option>BLS (Basic Life Support)</option>
+                        <option>Patient Transport</option>
+                        <option>Medical Utility Vehicle</option>
+                        <option>Event Medical Ambulance</option>
+                        <option>Air ambulance</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="image" name="image" required />
+                </div>
+                <div class="col-12 mt-2">
+                    <button type="submit" class="btn btn-success rounded-pill px-4">Add Vehicle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

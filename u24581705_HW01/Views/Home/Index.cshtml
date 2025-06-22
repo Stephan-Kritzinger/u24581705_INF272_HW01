@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <script src="~/js/SOS.js"></script>
+</head>
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-8 flex-column d-flex justify-content-center align-items-center">
+            <h2 class="fw-bold text-info mt-3">Need assistance?</h2>
+            <p class="fs-4 text-secondary">Our team will come to your aid and get you to safety</p>
+            <button type="button" class="btn btn-info rounded-pill text-light mb-3" onclick="window.location.href='@Url.Action("Booking", "Home")'">Book Ambulance</button>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <img src="/Images/Logo.png"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 flex-column d-flex justify-content-center align-items-center" style="background-color: #d8dadc;">
+            <h1 class="fw-bold text-danger mt-5">Emergency?</h1>
+            <p class="fs-3 text-info text-center mb-5">Hit the button to the right and we will send a vehicle to your location as soon as possible, no additional steps required.</p>
+        </div>
+        <div class="col-4 flex-column d-flex justify-content-center align-items-center">
+            <div class="rounded-circle border border-danger p-2 d-inline-block">
+                <button type="button" class="btn btn-danger rounded-circle text-light btn-lg p-5" style="width: 100%; height: 100%" onclick="generateSOS()">S.O.S</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

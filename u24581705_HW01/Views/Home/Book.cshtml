@@ -1,0 +1,101 @@
+﻿@model BookingViewModel
+@section Scripts {
+    @Html.Raw("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.9.4/dist/css/tempus-dominus.min.css\" crossorigin=\"anonymous\">")
+    @Html.Raw("<script src=\"https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.9.4/dist/js/tempus-dominus.min.js\"></script>")
+    @Html.Raw("<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\" crossorigin=\"anonymous\"></script>")
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/book.js"></script>
+    <script>
+        const data = @Html.Raw(TempData["json"])
+        if(data != ""){
+            let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            bookings.push(data);
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+            window.location.href = '/Home/BookingConfirmed?guid=' + encodeURIComponent(data.guid);
+        }
+    </script>
+    <link rel="stylesheet" href="~/css/book.css" />
+    
+</head>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col">
+            <i class="fa-solid fa-indent fa-2xl"></i>
+            <br />
+            <h2 class="fw-bold text-info mt-3 text-center">@Model.Service</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form asp-action="saveBooking" asp-controller="Home" method="post" enctype="multipart/form-data">
+            <div class="row row-cols-2">
+                <div class="col">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Full Name" name="fullName" required/>
+                </div>
+                <div class="col">
+                    <label for="Phone">Phone</label>
+                    <input type="text" class="form-control" id="Phone" placeholder="+27 000 000 0000" name="phone" required />
+                </div>
+                <div class="col">
+                    <label for="datetimepicker1Input" class="form-label">Pick-up-time</label>
+                    <div class="input-group log-event"
+                         id="datetimepicker1"
+                         data-td-target-input="nearest"
+                         data-td-target-toggle="nearest">
+                        <input id="datetimepicker1Input"
+                               type="text"
+                               class="form-control date"
+                               data-td-target="#datetimepicker1" readonly required name="datetime"/>
+                        <span class="input-group-text"
+                              data-td-target="#datetimepicker1"
+                              data-td-toggle="datetimepicker">
+                            <i class="fas fa-clock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="Reason">Reason</label>
+                    <select class="form-select" id="Reason" name="reason" required>
+                        <option selected>Accident</option>
+                        <option>Allergic Reaction</option>
+                        <option>Cardiac Emergency</option>
+                        <option>Difficulty Breathing</option>
+                        <option>Fall or Injury</option>
+                        <option>Internal Pain</option>
+                        <option>Loss of Consciousness</option>
+                        <option>Mental Health Crisis</option>
+                        <option>Seizure</option>
+                        <option>Stroke Symptoms</option>
+                        <option>Trauma</option>
+                        <option>Unresponsive Person</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="Vehicle">Vehicle</label>
+                    <select class="form-select" id="Vehicle" name="vehicle" required onchange="syncVehicle()">
+
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="Driver">Driver</label>
+                    <select class="form-select" id="Driver" name="driver" required onchange="syncDriver()">
+                    </select>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="Address">Pick-up-address</label>
+                    <textarea class="form-control" id="Address" placeholder="Enter address here" name="address" required></textarea>
+                </div>
+                <div class=" col-12">
+                    <button type="submit" class="btn btn-primary rounded-pill px-4">Book Ambulance</button>
+                </div>
+            </div>
+            <input type="hidden" id="driverName" name="driverName" />
+            <input type="hidden" id="vehicleType" name="vehicleType" />
+            <input type="hidden" id="vehicleImage" name="vehicleImage" />
+            <input type="hidden" id="driverImage" name="driverImage" />
+        </form>
+    </div>
+</div>
+

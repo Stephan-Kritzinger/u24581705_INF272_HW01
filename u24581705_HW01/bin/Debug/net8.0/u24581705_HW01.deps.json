@@ -1,0 +1,43 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "u24581705_HW01/1.0.0": {
+        "dependencies": {
+          "TempusDominus": "6.10.1",
+          "popper.js": "1.16.1"
+        },
+        "runtime": {
+          "u24581705_HW01.dll": {}
+        }
+      },
+      "popper.js/1.16.1": {},
+      "TempusDominus/6.10.1": {}
+    }
+  },
+  "libraries": {
+    "u24581705_HW01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "popper.js/1.16.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6GiVZho0vwBnId7pK7NLTjMGq4F0/VE65I08CCeKlarVoUt1w8SGTtJmhNo/0pK38EGUP/xbT4+OkWB8UTMPBw==",
+      "path": "popper.js/1.16.1",
+      "hashPath": "popper.js.1.16.1.nupkg.sha512"
+    },
+    "TempusDominus/6.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JwfoOf1JpMLHbfOB/63BOE7kQNX+9pWnK3lOU57G+rwDDfHHtInC1zcCD/TjEYGDSm9G5l4qylS0sldt6DGt2Q==",
+      "path": "tempusdominus/6.10.1",
+      "hashPath": "tempusdominus.6.10.1.nupkg.sha512"
+    }
+  }
+}
